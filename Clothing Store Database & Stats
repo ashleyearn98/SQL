@@ -1,0 +1,28 @@
+--Create a clothing store database
+
+CREATE TABLE store (id integer primary key, name text, cost integer, stock integer, sell_price integer);
+INSERT INTO store VALUES
+(1, "hat", .50, 20, 5.00),
+(2, "shirt", 2.00, 50, 20.00),
+(3, "jeans", 5.00, 40, 40.00),
+(4, "socks", .50, 30, 3.00),
+(5, "shoes", 2.00, 20, 60.00),
+(6, "earrings", .25, 50, 10.00),
+(7, "necklaces", .50, 45, 15.00),
+(8, "bracelets", .50, 15, 12.00),
+(9, "rings", .25, 25, 5.00),
+(10, "coats", 5.00, 10, 30.00),
+(11, "beanies", 3.00, 10, 12.00),
+(12, "gloves", 1.50, 6, 6.00),
+(13, "sunglasses", 2.50, 25, 15.00),
+(14, "purses", 5.00, 15, 45.00),
+(15, "underwear", 2.00, 35, 5.00);
+
+--Display the database ordered by price
+SELECT * FROM store ORDER BY sell_price asc;
+
+--What is the total number of items in stock?
+SELECT SUM(stock) FROM store;
+
+--What is the average price of all the items in the store?
+SELECT AVG(sell_price) FROM store;
