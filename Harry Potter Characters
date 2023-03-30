@@ -1,0 +1,43 @@
+/* Create table about the people and what they do here */
+
+CREATE TABLE HPcharacters (id INTEGER PRIMARY KEY, fullname TEXT, age INTEGER, class TEXT);
+
+INSERT INTO HPcharacters (fullname, age, class) VALUES
+("Harry Potter", 15, "wizard"),
+("Ronald Weasley", 15, "wizard"),
+("Hermione Granger", 15, "witch"),
+("Sirius Black", 36, "animagus"),
+("Dobby", 37, "house elf");
+SELECT * FROM HPcharacters;
+
+CREATE TABLE hobbies (id INTEGER PRIMARY KEY, character_id INTEGER, hobbies TEXT);
+
+INSERT INTO hobbies (character_id, hobbies) VALUES
+(1, "quidditch"),
+(1, "being a hero"),
+(2, "chess"),
+(3, "studying"),
+(3, "time travelling"),
+(4, "being free"),
+(4, "playing hide n seek"),
+(5, "being free");
+SELECT * FROM hobbies;
+
+/* Display table with character information and character hobbies. */
+SELECT hp.fullname, hp.age, hp.class, h.hobbies
+FROM HPcharacters AS hp
+JOIN hobbies AS h
+ON hp.id = h.character_id;
+
+/* Display table with character names and hobbies only. */
+SELECT hp.fullname, h.hobbies
+FROM HPcharacters AS hp
+JOIN hobbies AS h
+ON hp.id = h.character_id;
+
+/* Which characters enjoy being free? */
+SELECT hp.fullname, h.hobbies
+FROM HPcharacters AS hp
+JOIN hobbies AS h
+ON hp.id = h.character_id
+WHERE hobbies = "being free";
