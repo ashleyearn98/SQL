@@ -16,11 +16,13 @@ INSERT INTO hobbies (character_id, hobbies) VALUES
 (1, "quidditch"),
 (1, "being a hero"),
 (2, "chess"),
+(2, "watching quidditch"),
 (3, "studying"),
 (3, "time travelling"),
 (4, "being free"),
 (4, "playing hide n seek"),
-(5, "being free");
+(5, "being free"),
+(5, "punishing oneself");
 SELECT * FROM hobbies;
 
 /* Display table with character information and character hobbies. */
